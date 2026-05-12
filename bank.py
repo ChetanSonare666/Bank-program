@@ -38,3 +38,4 @@ user1.credit(1000)
 user2 = Bank("Aman",5000,369852)
 user2.credit(2000)
 
+user3 =Bank("Ram",1000,159263)
