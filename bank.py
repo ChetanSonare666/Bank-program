@@ -31,6 +31,10 @@ class Bank:
         
  
 
-user1 = Bank("Rahul",4000,3241)
+user1 = Bank("Rahul",4000,324174)
 user1.debit(400)
 user1.credit(1000)
+
+user2 = Bank("Aman",5000,369852)
+user2.credit(2000)
+
