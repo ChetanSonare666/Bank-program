@@ -1,41 +1,52 @@
 class Bank:
-
-    def __init__(self,name,balance,account_no):
+    
+    def __init__(self,name,account_no,balance):
         self.name = name
-        self.balance = balance
         self.account_no = account_no
-        print("\nAccount Holder :",name)
-        print("Account balance :",balance)
-        print("Account number :",account_no)
-
-
-
-    def debit(self,amount):
-        if amount <= self.balance:
-            self.balance -= amount
-            print("\nAmount withdraw :",amount)
-            print("Remaining Balance :",self.balance)
-        else:
-            print("\nInsuficient Balance")
-
-    def credit(self,amount):
-        if amount > 0:
-            self.balance += amount
-            print("\nAmount Credited :",amount)
-            print("Total Balance :",self.balance)
-
-
-
-    def display_detail(self):
-        print("\nCurrent balance :",self.balance)
+        self.balance = balance
         
- 
+        print("\nAccount Holder Name:",name)
+        print("Account Number :",account_no)
+        print("Current Balance :",balance,"\n")
+        
+    def debit(self,amount):
+            self.amount = amount
+            if self.balance >= amount:
+                self.balance-= amount
+                print("Amount Debited :",amount,"\n")
+            else:
+                print("Insufficient Balance")
+            
+    def credit(self,amount):
+            self.amount = amount
+            if amount > 0:
+                self.balance += amount
+                print("Amount Credited",amount,"\n")
+            else:
+                print("Invalid Amount")
+                
+    def display_detail(self):
+            print("Total amount remaining :",self.balance,"\n")
 
-user1 = Bank("Rahul",4000,324174)
-user1.debit(400)
-user1.credit(1000)
+person = int(input("Enter the number of user :"))
 
-user2 = Bank("Aman",5000,369852)
-user2.credit(2000)
+for i in range(1,person+1):
 
-user3 =Bank("Ram",1000,159263)
+    print("\n","For person",i)
+
+    name = str(input("Enter Account Holder Name :"))
+    account_no = str(input("Enter Your Account Number :"))
+    balance = int(input("Enter The Balance :"))
+
+    debit = int(input("Enter the amount to debit :"))
+
+    credit = int(input("Enter the amount to credit :"))
+
+    user1 = Bank(name,account_no,balance)
+    user1.debit(debit)
+    user1.credit(credit)
+    user1.display_detail()
+
+
+                
+    
